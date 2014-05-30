@@ -1,0 +1,63 @@
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>Your Git Repository </h1>
+	<h2><%= @dirname.capitalize %></h2>
+  </div>
+</div>
+
+
+
+
+<div class="table-responsive">
+	
+	<table class="table table-bordered">
+
+		<tr>
+			<th>#</th>
+			<th>Commit</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th>Comment</th>
+		</th>
+		
+		<% @logs.each do |arr|%>
+			<% if arr["author"].nil? || arr["time"].nil? %>
+				<tr>
+					<td><%= %></td>
+					<td><%=  %></td>
+					<td><%=  %></td>
+					<td><%=  %> </td>
+					<td><% arr["commit"].insert(0,"commit ") %>
+						<%arr["commit"].split("|").each do |c| %>
+							<%= c %>
+								<br>
+						<% end %>
+					</td>
+				</tr>
+			<% else %>
+				<tr>
+					<td><%= arr["id"] %></td>
+					<td><%= arr["commit"] %></td>
+					<td><%= arr["author"] %></td>
+					<td><%= Date.parse(arr["time"]) %> </td>
+					<td>
+						<%arr["comment"].split("|").each do |c| %>
+							<%= c %>
+								<br>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+		
+		<% end %>
+		
+	</table>
+
+	<center>
+		<%#= will_paginate @logs%>
+
+	</center>
+
+</div>

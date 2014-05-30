@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gitlogger</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav style="margin-bottom: 0;" role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header ">
+		    <div class="animbrand"><a href="#" class="navbar-brand">Git Commit Counter</a></div>
+		  </div>
+
+		  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><%= link_to("Home",{:action=>"index"}) %></li>
+		        <li class="active"><%= link_to("Repository List",{:action=>"repository"}) %></li>
+		      </ul>
+		  
+			</div>
+		</div>
+	</nav>
+	<br><br><br>
+
+	<div class="container">
+
+		<%= yield %>
+
+	</div>
+	<br><br>
+	<div class = "navbar navbar-inverse navbar-fixed-bottom">
+
+		<div class="container">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li ><%= link_to("Created By : Neeraj Doharey","#") %></li>
+		      </ul>
+		  
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

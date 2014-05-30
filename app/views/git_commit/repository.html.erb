@@ -1,0 +1,14 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Your Git Repository </h2>
+  </div>
+</div>
+
+<ul>
+	<% @list.each do |l|%>
+		<% unless l=="." || l==".." %>
+			<li><%= link_to("#{l.capitalize}",:action=>"create",:dir_name=>"#{l}") %></li>
+		<% end %>
+	<% end %>
+</ul>
