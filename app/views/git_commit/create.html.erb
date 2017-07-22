@@ -1,19 +1,12 @@
-
-
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h1>Your Git Repository </h1>
-	<h2><%= @dirname.capitalize %></h2>
+	<h2><%= @dirname.capitalize %> (<%= @branch %>)</h2>
   </div>
 </div>
-
-
-
-
+<%#= @logs.size %>
 <div class="table-responsive">
-	
 	<table class="table table-bordered">
-
 		<tr>
 			<th>#</th>
 			<th>Commit</th>
@@ -21,7 +14,6 @@
 			<th>Date</th>
 			<th>Comment</th>
 		</th>
-		
 		<% @logs.each do |arr|%>
 			<% if arr["author"].nil? || arr["time"].nil? %>
 				<tr>
@@ -50,14 +42,10 @@
 					</td>
 				</tr>
 			<% end %>
-		
 		<% end %>
-		
+
 	</table>
-
 	<center>
-		<%#= will_paginate @logs%>
-
+		<%#= will_paginate @logs %>
 	</center>
-
 </div>

@@ -11,15 +11,15 @@
 	  <div class="container">
 		  <!-- Brand and toggle get grouped for better mobile display -->
 		  <div class="navbar-header ">
-		    <div class="animbrand"><a href="#" class="navbar-brand">Git Commit Counter</a></div>
+		    <div class="animbrand"><%= link_to "Git Commit Counter", root_path, class:"navbar-brand"%></div>
 		  </div>
 
 		  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><%= link_to("Home",{:action=>"index"}) %></li>
-		        <li class="active"><%= link_to("Repository List",{:action=>"repository"}) %></li>
+		        <!-- <li class="active"><%= link_to("Home",{:action=>"index"}) %></li> -->
+		        <li class=<%= "active" if params[:action]== "repository" || params[:action]== "list_branches" %> ><%= link_to("Repository List",{:action=>"repository"}) %></li>
 		      </ul>
-		  
+
 			</div>
 		</div>
 	</nav>
@@ -38,9 +38,9 @@
 		      <ul class="nav navbar-nav">
 		        <li ><%= link_to("Created By : Neeraj Doharey","#") %></li>
 		      </ul>
-		  
+
 			</div>
-			
+
 		</div>
 	</div>
 </body>

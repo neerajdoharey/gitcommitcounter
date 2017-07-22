@@ -1,0 +1,7 @@
+<ul>
+  <% @branch_name.each do |name| %>
+    <% unless name.strip == "origin/HEAD -> origin/master" %>
+      <li><%= link_to( name,:action=>"change_branch",:dir_name=>params[:dir_name], :branch_name=>name.split("/")[1]) %></li>
+    <% end %>
+  <% end %>
+</ul>
